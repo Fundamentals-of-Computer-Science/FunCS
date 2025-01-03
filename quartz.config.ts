@@ -14,7 +14,7 @@ const config: QuartzConfig = {
     enablePopovers: true,
     analytics: null,
     locale: "en-US",
-    baseUrl: "funcs.github.io",
+    baseUrl: "fundamentals-of-computer-science.github.io",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
     generateSocialImages: false,
@@ -24,12 +24,13 @@ const config: QuartzConfig = {
       typography: {
         // header: "Inter",
         // header: "Playfair Display",
-        // header: "Source Serif 4",
-        header: "Abril Fatface",
+        header: "PT Sans",
+        // header: "Source Sans 3",
         // body: "Lora",
         // body: "Source Sans 3",
-        body: "Karla",
-        code: "Source Code Pro",
+        body: "Newsreader",
+        // body: "Merriweather",
+        code: "Courier Prime",
       },
       colors: {
         lightMode: {
