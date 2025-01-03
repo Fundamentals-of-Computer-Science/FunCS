@@ -5,8 +5,6 @@ aliases:
 draft: true
 ---
 
-# Control Flow
-
 So far, we've talked a lot about solving individual small problems. We can use variables to remember and adjust a value over the course of a program. This leaves us with some problems though: how do we let our program's state change the outcome of our program? How do we take repetitive sections of code and make it more concise and more predictable? In this chapter we will discuss:
 1. how we *branch* in code execution
 2. how to repeat actions with *looping*

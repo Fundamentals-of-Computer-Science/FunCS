@@ -11,7 +11,7 @@ Welcome, learners! This website is your guide to mastering the fundamentals of C
 
 This textbook takes a definitions-focused approach to learning. We believe that a strong understanding starts with precise definitions. These definitions will form the bedrock of your knowledge, upon which you'll build a comprehensive understanding of programming concepts through examples and practice. Each definition is carefully illustrated with examples. Don't worry if a definition doesn't immediately click: Instead, treat them as fundamental truths. As you work through the examples, you'll see how these definitions operate in practice, solidifying your understanding.
 
-Our journey begins with the most fundamental building blocks: [[values and types]]. From there, we'll progressively build your knowledge, adding new concepts and restrictions upon these core ideas along the way. Expect a gradual start with plenty of hands-on practice before moving to more complex coding challenges. This approach ensures a solid foundation for later concepts and the rapid pace of later chapters.
+Our journey begins with the most fundamental building blocks: [[Chapter 1 - Values and Types|values and types]]. From there, we'll progressively build your knowledge, adding new concepts and restrictions upon these core ideas along the way. Expect a gradual start with plenty of hands-on practice before moving to more complex coding challenges. This approach ensures a solid foundation for later concepts and the rapid pace of later chapters.
 
 **Our Learning Path:**
 

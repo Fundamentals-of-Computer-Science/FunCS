@@ -5,8 +5,6 @@ aliases:
   - values and types
 ---
 
-# Level 0: Values
-
 In the journey of programming you will learn many concepts. These may range in complexity from simple to complex, but generally speaking, no matter what you type, you’ll always eventually end up back at a value. By the end of this chapter we will have covered:
  1. in precise terms, what a *value* is, and how we represent them in code,
  2. how we categorize values with their *types*,
