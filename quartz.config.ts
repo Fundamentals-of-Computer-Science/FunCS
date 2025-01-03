@@ -24,7 +24,7 @@ const config: QuartzConfig = {
       typography: {
         // header: "Inter",
         // header: "Playfair Display",
-        header: "PT Sans",
+        header: "Montserrat",
         // header: "Source Sans 3",
         // body: "Lora",
         // body: "Source Sans 3",
