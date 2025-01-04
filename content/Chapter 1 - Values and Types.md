@@ -141,8 +141,11 @@ Now we’re introducing a lot of definitions, and we notice that a lot of these 
 
 > [!example] Type signature
 > Saying that the operator `OR` takes in two Boolean’s and returns (simplifies to) a Boolean is clunky. Instead we can write this like so:
+> 
 > $$OR : (Bool, Bool) \rightarrow Bool$$
+> 
 > While it may not seem much better at first blush, with time, this format will make talking about code much easier. Another example is `NOT`:
+> 
 > $$NOT: Bool \rightarrow Bool$$
 
 So for a bit of a recap: 

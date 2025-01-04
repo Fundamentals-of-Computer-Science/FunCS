@@ -17,7 +17,9 @@ If we were to take the work we've done so far and try to write a program, we cou
 First, we introduce what we call these labeling/bindings: *variables*. 
 
 >[!abstract] Variables
+>
 >>[!Definition]
+>>
 >>A *Variable* is a reserved space in memory used to store a value of some type.
 >
 >When we want to label a value in programming, we usually create a variable for it. We refer to giving a value to this variable as *binding* or *assigning* the value to it.
@@ -42,7 +44,9 @@ Now you may have noticed that we use the word *variable*. This seemingly implies
 Now you may notice, we now have this idea that a variable's value can change throughout the execution of your program. After line 1, `x == 7` would return `true`, however after line 2 it would return `false`.  This means if I hand you this code and ask: "What value does x have", both 7 and 15 would be valid answers. To handle this, when we talk about code, we need to be specific about where in our program we are referring to. This allows us to talk about our code in different *states*.
 
 >[!abstract] State
+>
 >>[!Definition]
+>>
 >>Program *state* is the set of *bindings* at a given point of execution.
 >
 >We can refer to the set of variables and their current values as our *bindings*.
@@ -91,7 +95,9 @@ The how: C# uses a complicated piece of software, called a garbage collector, to
 C# also recognizes that it can be nice to have manual control over this as well, providing tools to allow us to control where a variable will be available explicitly, rather than letting the garbage collector take all the fun from us. It does so using the concept of define *scopes*.
 
 >[!abstract] Scope
+>
 >>[!Definition]
+>>
 >>Program *scope* hold boundaries of code, with a defined *start* and *end*, where any new entries to the programs state are cleared once execution crosses the *end*.
 >
 >This means that any variable, or other binding, we create within a specific scope is *only* accessible within, and *inaccessible* from the outside.
@@ -119,6 +125,7 @@ C# also recognizes that it can be nice to have manual control over this as well,
 To understand how we can use variables with expressions, and vice versa, first let's recall our definition of an expression:
 
 >[!Definition]
+>
 > An *expression* is a set of values and operators which evaluate to become a single value.
 
 Notice that we say *values and operators*, well it turns out the important part is actually the second half: *which evaluate to a single value*. Well remember: Variables exist to store a single value of some type! What do you think happens when we use a variable in code?
@@ -139,11 +146,14 @@ The order of steps in our code:
 This allows us to do two things:
 1. update our definition of an expression to: 
 >[!Definition]
+>
 >An *expression* is a set of operators and/or entities which combine to evaluate to a single value.
 
 2. and define the behavior of *assignment*/*binding*:
 >[!abstract] Assignment
+>
 >>[!Definition]
+>>
 >>Before we *assign* or *bind* a value to a variable, the expression is fully evaluated.
 >
 >>[!example]
@@ -194,6 +204,8 @@ Remember from our description earlier, line 5 executes in the following order:
 That's a lot of stuff for one line of code! Notice, when we evaluate expressions that the first step seems to be evaluate all of the variables, and then continue based on the rules of the types. This means that we can update our order of operations for *all* types:
 
 >[!Definition]
+
+
 > For all expressions of any type, evaluating variables precedes *any other operation*.
 
 
