@@ -228,7 +228,7 @@ flowchart TB
 
 Say we begin with $$(true\ \&\&\ true)\ ||\ (true\ \&\&\ false)$$
 First, we use PNAO to find the highest priority sub-expressions. Here there are two candidates:
-$true\ AND\ true$, along with $true\ AND\ false$. We can do either first, it doesn't matter since they are separate expressions. Let's do $true\ AND\ true$ first.
+$true\ \&\&\ true$, along with $true\ \&\&\ false$. We can do either first, it doesn't matter since they are separate expressions. Let's do $true\ \&\&\ true$ first.
 
 Let's examine the AND truth table:
 
@@ -573,7 +573,7 @@ Hence,
 Code snippet
 
 ```
-(true AND (false OR (true AND NOT true)) OR true) = true
+(true && (false || (true && !true)) || true) = true
 ```
 
 ### Inference Rules!
