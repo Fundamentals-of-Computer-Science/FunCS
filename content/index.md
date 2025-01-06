@@ -17,15 +17,15 @@ Our journey begins with the most fundamental building blocks: [[Chapter 1 - Valu
 
 **[[Chapter 1 - Values and Types]]** - Understanding the core of data and its representation.
 
-**[[Chapter 2 - Variables and Scope]]**- Managing data and memory within your programs.
+**🚧Chapter 2 - Variables and Scope**- Managing data and memory within your programs.
 
-**[[Chapter 3 - Control Flow]]** - Dictating the behavior of your programs.
+**🚧Chapter 3 - Control Flow** - Dictating the behavior of your programs.
 
-**Chapter 4: [[Collections]]** - Efficiently grouping and handling data.
+**🚧Chapter 4: Collections** - Efficiently grouping and handling data.
 
-**Chapter 5: [[Functions]]** - Organizing code and performing operations on data.
+**🚧Chapter 5: Functions** - Organizing code and performing operations on data.
 
-**Chapter 6: [[Custom Types and Classes]]** - Modeling real-world concepts in your code.
+**🚧Chapter 6: Custom Types and Classes** - Modeling real-world concepts in your code.
 
 Now enough of that, let's get started with [[Chapter 1 - Values and Types]].
 

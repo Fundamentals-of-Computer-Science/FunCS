@@ -1,6 +1,6 @@
 ---
 title: Ch. 2 - Variables and Scope
-draft: false
+draft: true
 aliases:
   - variables
   - scope

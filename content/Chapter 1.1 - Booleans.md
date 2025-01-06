@@ -6,7 +6,7 @@ aliases:
 ---
 
 
-In programming we deal with many types of data to represent complex models, compute equations, and even to provide an efficient user interface. However, from a computer's perspective, this will often be broken down into simpler problems. And in this case we are here to discuss the simplest type in this course: *booleans*.
+In programming we deal with many types of data to represent complex models, compute equations, and even to provide an efficient user interface. However, from a computer's perspective, this is usually broken down into simpler problems and types. And in this case we are here to discuss the simplest type in this course: *booleans*.
 In this chapter we will:
 1. *Define* booleans, once again,
 2. Formally describe the *behavior* of boolean operators,
@@ -69,22 +69,10 @@ Any yes or no question is simply a boolean expression. When you search for somet
 You may notice in our definitions: both AND and OR share the same type signature! This may feel unintuitive, but it's important to note that a type signature exists to tell you and  the computer what kind of thing(s) go in, and what kind of thing comes out. They say nothing about how specific values are decided. That's why we describe *both* the typing of an operator, and separately, its behavior. To illustrate this, examine the figure below:
 
 ```mermaid
-%%{init: {
-  'theme': 'base',
-  'themeVariables': {
-    'primaryColor': '#E69F00',
-    'primaryTextColor': '#000000',
-    'primaryBorderColor': '#2B4162',
-    'lineColor': '#2B4162',
-    'secondaryColor': '#56B4E9',
-    'tertiaryColor': '#009E73'
-  }
-}}%%
-
 graph TB
-    classDef typeNode fill:#E69F00,stroke:#2B4162,stroke-width:2px,color:#000000
-    classDef behaviorNode fill:#56B4E9,stroke:#2B4162,stroke-width:2px,color:#000000
-    classDef resultNode fill:#009E73,stroke:#2B4162,stroke-width:1px,color:#000000
+    classDef typeNode fill:#E69F0020,stroke:#2B4162,stroke-width:2px
+    classDef behaviorNode fill:#56B4E920,stroke:#2B4162,stroke-width:2px
+    classDef resultNode fill:#009E7320,stroke:#2B4162,stroke-width:1px
     
     Input1[/"Boolean × Boolean → Boolean"/]
     
@@ -119,6 +107,7 @@ There's actually a formal notation for fully defining the behavior of different 
 | :---: | :-----: |
 | true  | (blank) |
 | false | (blank) |
+
 Each column will represent a combination of values. The column(s) *after* our inputs will be filled in after, representing the output if we use the combination of inputs in the same row. Again: each row represents a combination of inputs, and the corresponding output received by using those inputs.
 
 So after we've filled out the possible values for our input X, we can compute the output for each row:
@@ -132,18 +121,19 @@ Let's do this again but for one with multiple inputs: AND
 
 | A     | B     | A AND B |
 | ----- | ----- | ------- |
-| false | false |         |
-| false | true  |         |
-| true  | false |         |
-| true  | true  |         |
+| false | false | -       |
+| false | true  | -       |
+| true  | false | -       |
+| true  | true  | -       |
+
 Remember, out input variables are fixed. We just fill out every possible combination in order. Once this is done, we can figure out what the outputs for each row (combination of inputs) are. Here it is broken down a little more:
 
-| A     | B     | A AND B         |
-| ----- | ----- | --------------- |
-| false | false | false AND false |
-| false | true  | false AND true  |
-| true  | false | true AND false  |
-| true  | true  | true AND true   |
+| A     | B     | A AND B        |
+| ----- | ----- | -------------- |
+| false | false | false && false |
+| false | true  | false && true  |
+| true  | false | true && false  |
+| true  | true  | true && true   |
 
 Which then simplifies to:
 
@@ -200,7 +190,7 @@ In traditional algebra, we have PEMDAS to denote ordering over the many operatio
 
 Say I give you the boolean expression: 
 ```boolean_algebra
-true AND (false OR (true AND NOT true)) OR true
+true && (false || (true && !true)) || true
 ```
 
 You have two primary ways to think about solving it.
@@ -216,39 +206,43 @@ You have two primary ways to think about solving it.
 
 ```mermaid
 flowchart TB
-    A([Start]) --> B["Prioritize\n(Highest-Priority Subexpression)"]
-    B --> C["Simplify\n(Use Truth Table)"]
-    C --> D["Substitute\n(Replace with Atomic Value)"]
-    D --> E{Is Expression\nSingle Atomic Value?}
-    E -- No --> B
-    E -- Yes --> F([Done!])
-
-    style A fill:#f0f0f0,stroke:#333,stroke-width:2px
-    style B fill:#fff0e0,stroke:#333
-    style C fill:#fff0e0,stroke:#333
-    style D fill:#fff0e0,stroke:#333
-    style E fill:#6699cc,stroke:#003366,stroke-width:3px
-    style F fill:#cc6600,stroke:#663300,stroke-width:4px
+    A(("Start")) --> B["Prioritize<br/>(Highest-Priority Subexpression)"]
+    B --> C["Simplify<br/>(Use Truth Table)"]
+    C --> D["Substitute<br/>(Replace with Atomic Value)"]
+    D --> E{"Is Expression<br/>Single Atomic Value?"}
+    E -->|No| B
+    E -->|Yes| F(("Done!"))
+    
+    classDef start fill:#e3f2fd20,stroke:#1976d2,stroke-width:2px
+    classDef process fill:#fff3e020,stroke:#f57c00,stroke-width:2px
+    classDef decision fill:#e8eaf620,stroke:#3f51b5,stroke-width:3px
+    classDef terminal fill:#fce4ec20,stroke:#c2185b,stroke-width:2px
+    
+    class A start
+    class B,C,D process
+    class E decision
+    class F terminal
 ```
 ---
 #### Example
 
-Say we begin with $$(true\ AND\ true)\ OR\ (true\ AND\ false)$$
+Say we begin with $$(true\ \&\&\ true)\ ||\ (true\ \&\&\ false)$$
 First, we use PNAO to find the highest priority sub-expressions. Here there are two candidates:
 $true\ AND\ true$, along with $true\ AND\ false$. We can do either first, it doesn't matter since they are separate expressions. Let's do $true\ AND\ true$ first.
 
 Let's examine the AND truth table:
 
-| A     | B     | A AND B |
-| ----- | ----- | ------- |
-| false | false | false   |
-| false | true  | false   |
-| true  | false | false   |
-| true  | true  | true    |
+| A     | B     | A && B |
+| ----- | ----- | ------ |
+| false | false | false  |
+| false | true  | false  |
+| true  | false | false  |
+| true  | true  | true   |
+
 Notice in our expression, we have to operands, $true$, and $true$. To solve using the truth table, we simply find the row where the first and second operand are $true$; this gives us the answer in the third column -> $true$.
 
-Now once we substitute that in, we get the expression $$true\ OR\ (true\ AND\ false)$$
-Let's simplify that right side next. Here, we look for the row where A equals $true$, and B equals $false$, collecting our answer from the third column once again. Here it is $false$. This yields $$true\ OR\ false$$
+Now once we substitute that in, we get the expression $$true\ ||\ (true\ \&\&\ false)$$
+Let's simplify that right side next. Here, we look for the row where A equals $true$, and B equals $false$, collecting our answer from the third column once again. Here it is $false$. This yields $$true\ \|\  false$$
 Now use the truth table for OR you made in the exercise above. (recall: the rule for OR: if *either* operand is true, the expression evaluates as true). You will find this evaluates to:
 $$true$$
 And we're done! Whenever we evaluate expressions, remember that we are done once we have reached a value, which we've defined to be data that we cannot simplify further.
@@ -326,7 +320,7 @@ The same is true for each of our simplification rules, which I leave you to chec
 
 Let's break down the process we're about to follow to apply these and solve expressions:
 
-1. **Parenthesize (PNAO):** Add parentheses to the expression, following the order of operations (PNAO: Parentheses,Not, And, Or), until the entire expression is clearly grouped into two main subexpressions joined by a single operator.
+1. **Parenthesize (PNAO):** Add parentheses to the expression, following the order of operations (PNAO: Parentheses, Not, And, Or), until the entire expression is clearly grouped into two main subexpressions joined by a single operator.
     
 2. **Simplify the Outermost Operation:**
     - **Base Rule?**: Can a base rule (e.g., `AndTrue`, `OrFalse`, `NotTrue`) be applied to simplify the _outermost_operation and its operands to a single value (`true` or `false`)?
@@ -344,10 +338,12 @@ Let's break down the process we're about to follow to apply these and solve expr
 ```mermaid
 %%{init: {'flowchart': {'width': 500, 'useMaxWidth': true}}}%%
 flowchart TB
-    classDef primary fill:#e9d8a6,stroke:#94d2bd,color:#001219
-    classDef secondary fill:#ee9b00,stroke:#ca6702,color:#001219
-    classDef decision fill:#005f73,stroke:#0a9396,color:#e9d8a6
-    classDef terminal fill:#9b2226,stroke:#ae2012,color:#e9d8a6
+    %% Using rgba for fill colors to add transparency
+    classDef primary fill:#e9d8a620,stroke:#94d2bd
+    classDef secondary fill:#ee9b0020,stroke:#ca6702
+    classDef decision fill:#005f7320,stroke:#0a9396
+    classDef terminal fill:#9b222620,stroke:#ae2012
+    
     A[Start: Expression] -->|Step 1| B[Add parentheses<br>following PNAO]:::primary
     B --> C{Can we use<br>a base rule?}:::decision
     C -->|Yes| D[Apply base rule]:::secondary
@@ -367,44 +363,54 @@ Let's walk through an example or two to be sure we got it.
 
 ---
 
-Take the expression $true\ and\ (false\ or\ not\ false)$
+Take the expression $$true\ \&\&\ (false\ ||\  !false)$$
 
-First, we can see that it is properly parenthesized -> it is an expression consisting of an operator with an appropriate number of input expressions.
+First, we can see that it is properly parenthesized → it is an expression consisting of an operator with an appropriate number of input expressions.
 
 Second, we look through our AND rules to see which fit this shape: AndStepRight.
-Which is $\frac{v_1 \text{ is a value} \quad e_2 \longrightarrow e_2'}{v_1 \land e_2 \longrightarrow v_1 \land e_2'}$
-This means we can break this down into 
-$true$ and (the result of solving the subexpression)
+Which is:
 
-Where our subexpression is 
-$false\ or\ not\ false$.
+$$\frac{v_1 \text{ is a value} \quad e_2 \longrightarrow e_2'}{v_1 \land e_2 \longrightarrow v_1 \land e_2'}$$
+
+This means we can break this down into:
+$$true\ \text{and}\ (\text{the result of solving the subexpression})$$
+
+Where our subexpression is:
+$$false\ ||\ !false$$
 
 Now we go to step 1 to see if we can parenthesize this, which we can:
-$false\ or\ (not\ false)$
+$$false\ ||\ ( !false)$$
 
 We need to check our step rules again, and we see that we are looking at: OrStepRight
-$\frac{v_1 \text{ is a value} \quad e_2 \longrightarrow e_2'}{v_1 \lor e_2 \longrightarrow v_1 \lor e_2'}$
+$$\frac{v_1 \text{ is a value} \quad e_2 \longrightarrow e_2'}{v_1 \lor e_2 \longrightarrow v_1 \lor e_2'}$$
 
-Here what we simplify this to is 
-$false\ or$ (whatever this expression simplifies too)
+Here what we simplify this to is:
+$$false\ ||\ (\text{whatever this expression simplifies to})$$
 
 We can now take this expression, notice it does not need parenthesizing:
-$not false$
+$$!false$$
+
 Further, it is an operator with all its operands! This means we can finally simplify a value!
 We can use the aptly named NotFalse rule as described:
-$\frac{}{\texttt{not false} \longrightarrow \texttt{true}} \quad \text{(NotFalse)}$
-This gives us $true$!
+
+$$\frac{}{\texttt{!false} \longrightarrow \texttt{true}} \quad \text{(NotFalse)}$$
+
+This gives us $$true$$
 
 Now we simply go back up, simplifying along the way:
-$false\ or\ true$
-this again is an expression which can be solved with one of our rules: OrTrue!
-$\frac{}{e \lor \texttt{true} \longrightarrow \texttt{true}} \quad \text{(OrTrue)}$
-Which gives us:
-$true$!
+$$false\ ||\ true$$
 
-Now we can go a step further up, giving us
-$true\ and\ true$
-Which for the astute, sure looks like an AndTrue to me. Using this rule, we get $true$ for our final answer.
+This again is an expression which can be solved with one of our rules: OrTrue!
+
+$$\frac{}{e \lor \texttt{true} \longrightarrow \texttt{true}} \quad \text{(OrTrue)}$$
+
+Which gives us:
+$$true$$
+
+Now we can go a step further up, giving us:
+$$true\ \&\&\ true$$
+
+Which for the astute, sure looks like an AndTrue to me. Using this rule, we get $$true$$ for our final answer.
 
 ---
 
@@ -430,16 +436,16 @@ We repeat identifying and simplifying the highest-priority subexpression until t
 
 **Expression to Simplify**
 
-$$ \text{true AND (false OR (true AND NOT true)) OR true} $$
+$$ \text{true \&\& (false || (true \&\& !true)) || true} $$
 
 ---
 
 **1. Identify the Highest Priority Subexpression (P → N → A → O)**
 
-- **Parentheses** have priority, so inside the big parentheses $(\dots)$, we see a smaller one: $(true AND NOT true)$.
-- Within $(true AND NOT true)$, there is a **NOT**, which is our next highest priority to evaluate.
+- **Parentheses** have priority, so inside the big parentheses $(\dots)$, we see a smaller one: $(true\ \&\&\ !true)$.
+- Within $(true\ \&\&\ !true)$, there is a **NOT**, which is our next highest priority to evaluate.
 
-So the very first subexpression we focus on is $\text{NOT true}$ inside $(true AND NOT true)$.
+So the very first subexpression we focus on is $\text{NOT true}$ inside $(true\ \&\&\ !true)$.
 
 ---
 
@@ -449,22 +455,22 @@ So the very first subexpression we focus on is $\text{NOT true}$ inside $(true A
 
 From the **NOT** truth table:
 
-|A|NOT A|
-|:--|:--|
-|false|true|
-|true|false|
+| A     | !A    |
+| :---- | :---- |
+| false | true  |
+| true  | false |
 
 Here, $A = \text{true}$. Therefore,
 
-$$ \text{NOT true} \quad=\quad \text{false}. $$
+$$ \text{!true} \quad=\quad \text{false}. $$
 
 ---
 
 **2.2 Substitute Back**
 
-Now we replace $\text{NOT true}$ with `false` in the subexpression $(true AND NOT true)$:
+Now we replace $\text{NOT true}$ with `false` in the subexpression $(true\ \&\&\ !true)$:
 
-$$ (true \ \text{AND}\ \text{false}). $$
+$$ (true \ \text{\&\&}\ \text{false}). $$
 
 ---
 
@@ -472,53 +478,53 @@ $$ (true \ \text{AND}\ \text{false}). $$
 
 According to PNAO, once we handle all NOTs inside parentheses, we move on to **AND**.
 
-**3.1 Evaluate $(true AND false)$**
+**3.1 Evaluate $(true\ \&\&\ false)$**
 
 Using the **AND** truth table:
 
-|A|B|A AND B|
-|:--|:--|:--|
-|false|false|false|
-|false|true|false|
-|true|false|false|
-|true|true|true|
+| A     | B     | A && B |
+| :---- | :---- | :----- |
+| false | false | false  |
+| false | true  | false  |
+| true  | false | false  |
+| true  | true  | true   |
 
-For `true AND false`, the result is `false`. So
+For `true && false`, the result is `false`. So
 
-$$ (true \ \text{AND}\ \text{false}) \quad=\quad \text{false}. $$
+$$ (true \ \text{\&\&}\ \text{false}) \quad=\quad \text{false}. $$
 
 ---
 
 **3.2 Substitute Back**
 
-We replace $\text{(true AND NOT true)}$ with `false` in the original expression:
+We replace $\text{(true \&\& !true)}$ with `false` in the original expression:
 
-$$ \text{true AND (false OR false) OR true}. $$
+$$ \text{true \&\& (false || false) || true}. $$
 
 So now our expression is:
 
-$$ \text{true AND (false OR false) OR true}. $$
+$$ \text{true \&\& (false || false) || true}. $$
 
 ---
 
 **4. Next Priority: Parentheses (Again) Then OR**
 
-We still have parentheses left: $\text{(false OR false)}$. We now evaluate that **OR**.
+We still have parentheses left: $\text{(false || false)}$. We now evaluate that **OR**.
 
 **4.1 Evaluate $\text{(false OR false)}$**
 
 From the **OR** truth table:
 
-|A|B|A OR B|
-|:--|:--|:--|
-|false|false|false|
-|false|true|true|
-|true|false|true|
-|true|true|true|
+| A     | B     | A \|\| B |
+| :---- | :---- | :------- |
+| false | false | false    |
+| false | true  | true     |
+| true  | false | true     |
+| true  | true  | true     |
 
-For `false OR false`, the result is `false`.
+For `false || false`, the result is `false`.
 
-$$ (false \ \text{OR}\ \text{false}) \quad=\quad \text{false}. $$
+$$ (false \ \text{||}\ \text{false}) \quad=\quad \text{false}. $$
 
 ---
 
@@ -526,7 +532,7 @@ $$ (false \ \text{OR}\ \text{false}) \quad=\quad \text{false}. $$
 
 Now we substitute that in:
 
-$$ \text{true AND false OR true}. $$
+$$ \text{true \&\& false || true}. $$
 
 At this point, all parentheses are gone. By PNAO, we do any remaining **AND** operations next, then **OR**.
 
@@ -534,25 +540,25 @@ At this point, all parentheses are gone. By PNAO, we do any remaining **AND** 
 
 **5. Evaluate the AND Next**
 
-**5.1 Evaluate $(true AND false)$**
+**5.1 Evaluate $(true\ \&\&\ false)$**
 
 We use the AND table again:
 
-$$ \text{true AND false} \quad=\quad \text{false}. $$
+$$ \text{true \&\& false} \quad=\quad \text{false}. $$
 
 So the expression becomes:
 
-$$ \text{false OR true}. $$
+$$ \text{false || true}. $$
 
 ---
 
 **6. Finish with OR**
 
-**6.1 Evaluate $(false OR true)$**
+**6.1 Evaluate $(false\ ||\ true)$**
 
 From the OR table:
 
-$$ \text{false OR true} \quad=\quad \text{true}. $$
+$$ \text{false || true} \quad=\quad \text{true}. $$
 
 ---
 
@@ -567,21 +573,23 @@ Hence,
 Code snippet
 
 ```
-true AND (false OR (true AND NOT true)) OR true = true
+(true AND (false OR (true AND NOT true)) OR true) = true
 ```
 
 ### Inference Rules!
 
-Again, we start with $$true\ AND\ (false\ OR\ (true\ AND\ NOT\ true)) OR\ true$$
+Again, we start with 
+$$true\ \&\&\ (false\ ||\ (true\ \&\&\  !true))\ ||\ true$$
 
 Remember that our first step is going to be: parenthesize!
-This yields: $$(true\ AND\ (false\ OR\ (true\ AND\ NOT\ true)) )OR\ true$$
+This yields: 
+$$(true\ \&\&\ (false\ ||\ (true\ \&\&\ !true)))\ ||\ true$$
 
-We can scan our rules and see we have one just for this: ORTrue!
+We can scan our rules and see we have one just for this: OrTrue!
+Remember: 
+$$\frac{}{e \lor \texttt{true} \longrightarrow \texttt{true}} \quad \text{(OrTrue)}$$
 
-Remember: $\frac{}{e \lor \texttt{true} \longrightarrow \texttt{true}} \quad \text{(OrTrue)}$
-
-Applying this rule yields: $true$. 
+Applying this rule yields: $$true$$.
 
 ---
 ## Exercises
