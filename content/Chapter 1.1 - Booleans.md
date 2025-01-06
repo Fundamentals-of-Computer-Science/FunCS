@@ -570,8 +570,6 @@ $$ \text{true}. $$
 
 Hence,
 
-Code snippet
-
 ```
 (true && (false || (true && !true)) || true) = true
 ```
