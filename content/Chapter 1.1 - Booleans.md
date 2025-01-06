@@ -595,6 +595,7 @@ Applying this rule yields: $$true$$.
 Here are some exercises. They progress in difficulty. I recommend you do each using both techniques shown above. Which one do you find easier for each? (click on the arrow to expand the questions)
 
 >[!example]- Exercises
+>
 >```csharp
 >// Expression 1
 bool expr1 = true && false; 
