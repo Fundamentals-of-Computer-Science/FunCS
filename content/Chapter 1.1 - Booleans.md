@@ -228,7 +228,7 @@ flowchart TB
 
 Say we begin with $$(true\ \&\&\ true)\ ||\ (true\ \&\&\ false)$$
 First, we use PNAO to find the highest priority sub-expressions. Here there are two candidates:
-$true\ \&\&\ true$, along with $true\ \&\&\ false$. We can do either first, it doesn't matter since they are separate expressions. Let's do $true\ \&\&\ true$ first.
+$true\ AND\ true$, along with $true\ AND\ false$. We can do either first, it doesn't matter since they are separate expressions. Let's do $true\ AND\ true$ first.
 
 Let's examine the AND truth table:
 
@@ -581,7 +581,7 @@ $$true\ \&\&\ (false\ ||\ (true\ \&\&\  !true))\ ||\ true$$
 
 Remember that our first step is going to be: parenthesize!
 This yields: 
-$$(true\ \&\&\ (false\ ||\ (true\ \&\&\ !true)))\ ||\ true$$
+$$(true\ \&\&\ (false\ ||\ (true\ \&\&\  !true)))\ ||\ true$$
 
 We can scan our rules and see we have one just for this: OrTrue!
 Remember: 
@@ -592,7 +592,47 @@ Applying this rule yields: $$true$$.
 ---
 ## Exercises
 
-Here are some exercises 
+Here are some exercises. They progress in difficulty. I recommend you do each using both techniques shown above. Which one do you find easier for each? (click on the arrow to expand the questions)
+
+>[!example]- Exercises
+>```csharp
+>// Expression 1
+bool expr1 = true && false; 
+// A straightforward check of AND with True and False.
+>
+>// Expression 2
+>bool expr2 = true || false; 
+>
+// Expression 3
+bool expr3 = !(true && true); 
+>
+// Expression 4
+bool expr4 = (true && !false) || (false && true); 
+>
+// Expression 5
+bool expr5 = !(true && (false || true)); 
+>
+// Expression 6
+bool expr6 = (true && !false) || (!(true) && false); 
+>
+// Expression 7
+bool expr7 = (false && false) || (true && !true); 
+>
+// Expression 8
+bool expr8 = (true || false) && (true && !false); 
+>
+// Expression 9
+bool expr9 = (false || false) && !(true && true); 
+>
+// Expression 10
+bool expr10 = (( !true && false ) || ( true && false )) && true; 
+>
+// Expression 11
+bool expr11 = (((true && !false) || (false && !false)) && !(false || !true)); 
+>
+// Expression 12
+bool expr12 = !(true && (false || (!true && true))) || (false && true); 
+> ```
 
 ---
 
