@@ -598,41 +598,41 @@ Here are some exercises. They progress in difficulty. I recommend you do each us
 >
 >```csharp
 >// Expression 1
-bool expr1 = true && false; 
-// A straightforward check of AND with True and False.
+>bool expr1 = true && false; 
+>// A straightforward check of AND with True and False.
 >
 >// Expression 2
 >bool expr2 = true || false; 
 >
-// Expression 3
-bool expr3 = !(true && true); 
+>// Expression 3
+>bool expr3 = !(true && true); 
 >
-// Expression 4
-bool expr4 = (true && !false) || (false && true); 
+>// Expression 4
+>bool expr4 = (true && !false) || (false && true); 
 >
-// Expression 5
-bool expr5 = !(true && (false || true)); 
+>// Expression 5
+>bool expr5 = !(true && (false || true)); 
 >
-// Expression 6
-bool expr6 = (true && !false) || (!(true) && false); 
+>// Expression 6
+>bool expr6 = (true && !false) || (!(true) && false); 
 >
-// Expression 7
-bool expr7 = (false && false) || (true && !true); 
+>// Expression 7
+>bool expr7 = (false && false) || (true && !true); 
 >
-// Expression 8
-bool expr8 = (true || false) && (true && !false); 
+>// Expression 8
+>bool expr8 = (true || false) && (true && !false); 
 >
-// Expression 9
-bool expr9 = (false || false) && !(true && true); 
+>// Expression 9
+>bool expr9 = (false || false) && !(true && true); 
 >
-// Expression 10
-bool expr10 = (( !true && false ) || ( true && false )) && true; 
+>// Expression 10
+>bool expr10 = (( !true && false ) || ( true && false )) && true; 
 >
-// Expression 11
-bool expr11 = (((true && !false) || (false && !false)) && !(false || !true)); 
+>// Expression 11
+>bool expr11 = (((true && !false) || (false && !false)) && !(false || !true)); 
 >
-// Expression 12
-bool expr12 = !(true && (false || (!true && true))) || (false && true); 
+> // Expression 12
+> bool expr12 = !(true && (false || (!true && true))) || (false && true); 
 > ```
 
 ---
