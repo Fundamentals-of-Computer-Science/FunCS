@@ -599,7 +599,6 @@ Here are some exercises. They progress in difficulty. I recommend you do each us
 >```csharp
 >// Expression 1
 >true && false; 
->// A straightforward check of AND with True and False.
 >
 >// Expression 2
 >true || false; 
