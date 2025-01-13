@@ -380,7 +380,7 @@ Remember our friend the floating-point number? Those pesky approximations we tal
 >Console.WriteLine(0.1 + 0.2 == 0.3);  // But it prints false! 😱
 >```
 >
->Why? Remember 0.1 + 0.2 doesn't give us exactly 0.3 in binary floating-point! Instead, we get  0.30000000000000004.
+>Why? Remember 0.1 + 0.2 doesn't give us exactly 0.3 in base-2 floating-point! Instead, we get  0.30000000000000004.
 
 To safely compare floating-point numbers, we can use what's called an "epsilon" comparison:
 
