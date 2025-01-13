@@ -86,12 +86,12 @@ The main change to keep in mind is how underflow and overflow work. More formall
 
 Let’s do some exercises to test your understanding:
 
-> [!exercise]
+> [!example] Exercise
 > 
 > What would the result of `2147483647 + 2` be?
 
 
-> [!Exercise] Underflow
+> [!example] Exercise
 > What would the result of `int.MinValue - 3` be?
 
 
