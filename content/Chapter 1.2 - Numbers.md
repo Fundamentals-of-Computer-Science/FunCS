@@ -166,15 +166,15 @@ There is one final operator for division we must cover, commonly called the rema
 
 >[!abstract] Modulus of Integers
 >
->>[!definition] Modulus
+>>[!definition] Modulo
 >>
 >> $Mod: (int, int) \rightarrow int$ returns the remainder of a division between two integers.
 >>
 >
->>[!property] Properties of Modulus
+>>[!property] Properties of Modulo
 >> - **Remainder:** The result is always an integer between 0 (inclusive) and the absolute value of the divisor (exclusive).
 >> - **Sign:** The sign of the result follows the sign of the dividend (the first operand).
->> - **Division by Zero:** Modulus by zero results in a `DivideByZeroException`.
+>> - **Division by Zero:** Modulo by zero results in a `DivideByZeroException`.
 >
 >>[!example]
 >> ```csharp
@@ -186,14 +186,14 @@ There is one final operator for division we must cover, commonly called the rema
 >> ```
 
 
-Modulus as an operator is used throughout all sorts of problems in CS. There are two general ways of thinking of taking the remainder: one is the literal: divide the first operand by the second, return the remainder. However some are helped with a clock analogy:
+Modulo as an operator is used throughout all sorts of problems in CS. There are two general ways of thinking of taking the remainder: one is the literal: divide the first operand by the second, return the remainder. However some are helped with a clock analogy:
 
 An analog clock serves as mod 12: 
 
 Say it is 2 o-clock. What time is it in 15 hours?
 You may internally use mod to see that we only need move the hour hand 3 times to find our answer. But this is the equivalent of moving our hour hand 15 times around the circle.
 
-When using modulus, this is often the style of problems we use it for: we are looking for a value in a cycle or constrained space, so we use modulus to control the range of possible outputs.
+When using modulo, this is often the style of problems we use it for: we are looking for a value in a cycle or constrained space, so we use modulo to control the range of possible outputs.
 
 ### Exercises
 
