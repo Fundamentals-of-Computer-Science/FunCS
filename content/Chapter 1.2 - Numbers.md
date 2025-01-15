@@ -76,7 +76,7 @@ While you may be familiar with the operators below, they are a bit different tha
 >> ```csharp
 >>  Console.WriteLine(5);
 >>  Console.WriteLine(10);
->>  Console.WriteLine(x - y); // difference will be -5
+>>  Console.WriteLine(5 - 10); // difference will be -5
 >>  Console.WriteLine(int.MinValue - 1); // outputs int.MaxValue (2147483647)
 >> ```
 
@@ -113,7 +113,7 @@ Now let’s move on to Multiplication and Division, which we will split up for r
 >> ```csharp
 >>  Console.WriteLine(10);
 >>  Console.WriteLine(3);
->>  Console.WriteLine(a * b);      // product will be 30
+>>  Console.WriteLine(10 * 3);      // product will be 30
 >>  Console.WriteLine(int.MaxValue * 2); // overflow will occur
 >> ```
 
@@ -139,10 +139,8 @@ This is all pretty close to what you’ll have experienced in any algebra course
 >
 >>[!example]
 >> ```csharp
->>  int a = 10;
->>  int b = 3;
->>  Console.WriteLine(10 / 3);     // quotient will be 3 (integer division)
->>  Console.WriteLine(10 / 0); // This will throw a DivideByZeroException at runtime
+>>  Console.WriteLine(10 / 3);// quotient will be 3 (integer division)
+>>  Console.WriteLine(10 / 0);// This will throw a DivideByZeroException at runtime
 >> ```
 
 Let’s explore an example to understand this cutoff thing. If we take the following expression:
