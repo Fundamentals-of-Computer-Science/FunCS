@@ -18,7 +18,7 @@ Our journey begins with the most fundamental building blocks: [[Chapter 1 - Valu
 **[[Chapter 1 - Values and Types]]** - Understanding the core of data and its representation.
 	- [[Chapter 1.1 - Booleans]]
 	- [[Chapter 1.2 - Numbers]]
-	-[[Chapter 1.3 - Chars and Strings]]
+	- [[Chapter 1.3 - Chars and Strings]]
 
 **🚧Chapter 2 - Variables and Scope**- Managing data and memory within your programs.
 
