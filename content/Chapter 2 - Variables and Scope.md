@@ -476,10 +476,12 @@ This demonstrates our fundamental rule:
 > **Task:** Show right-to-left assignment flow (i.e., `b = c` then `a = b`).
 ---
 
+---
+
 **Core Principles:**
 1. Variables serve as value proxies in expressions
 2. Complete evaluation precedes any assignment
 3. Type compatibility is rigorously enforced
 4. Complex expressions resolve variables before performing operations
 
-This understanding of variables and expressions forms the foundation for managing program state and data manipulation.
+In general, you will find that many errors you run into come from not considering what order things will evaluate in. Now that we have this concept of program state and storing values, how do we create programs that change behavior based on these variables? Next chapter we will cover this, going over [[Branching and Looping]] as control flow structures.
