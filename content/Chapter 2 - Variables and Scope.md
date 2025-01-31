@@ -1,12 +1,12 @@
 ---
 title: Ch. 2 - Variables and Scope
-draft: true
+draft: false
 aliases:
   - variables
   - scope
 ---
 
-If we were to take the work we've done so far and try to write a program, we couldn't do much with it. See, we've done a lot of work in simplifying values, which don't get me wrong, is important! However, notice even when describing some of the more hands on approaches in evaluating booleans, we ended up in a situation where we had to *label* things. This chapter will dive into this idea of labeling and remembering values, exploring
+If we were to take the work we've done so far and try to write a program, we couldn't do much with it. See, we've done a lot of work in simplifying values, but don't get me wrong, is important! However, notice even when describing some of the more hands on approaches in evaluating booleans, we ended up in a situation where we had to *label* things. This chapter will dive into this idea of labeling and remembering values, exploring
 1. how we *bind* values to a label so that they become *reusable*,
 2. whether these bindings are *permanent* or *variable*,
 3. and how we define *where* we can use them.
@@ -23,12 +23,132 @@ First, we introduce what we call these labeling/bindings: *variables*.
 >>A *Variable* is a reserved space in memory used to store a value of some type.
 >
 >When we want to label a value in programming, we usually create a variable for it. We refer to giving a value to this variable as *binding* or *assigning* the value to it.
+>
+>>[!info] Properties
+>>
+>>- Memory Management: Types define the exact amount of memory space needed for each variable, allowing C# to efficiently allocate and manage computer resources
+>>- Program Reliability: Fixed types prevent unexpected behavior by ensuring operations (like division) consistently work as intended across your code 
+>
 >>[!example]
 >>```csharp
 >> int x = 7; // reads: create an int variable called x, and assign 7 to it.
 >>```
 >
 >Notice that we use the `=` symbol here. In C# `=` is used for *assignment*, where is `==` is used to check for *equality*.
+
+> [!example]- **Exercises - Code Correction (5 problems)**  
+> **Fix invalid C# code by addressing syntax/type errors**  
+>  
+> **1. Broken Code:**
+> ```csharp
+> double 3dPoint = 5.5;
+> int count = "12";
+> Console.WriteLine(3dPoint + count);
+> ```
+> **Task:** Identify 3 errors. Fix and explain each correction.
+> <br>
+> **2. Broken Code:**
+> ```csharp
+> bool isActive = "true";
+> string user-id = "abc123";
+> float temp = 98.6;
+> ```
+> **Task:** Find 3 issues. Correct with proper C# syntax.
+> <br>
+> **3. Broken Code:**
+> ```csharp
+> const string GREETING = "Hello";
+> int x == 5;
+> GREETING = "Bonjour";
+> ```
+> **Task:** Fix 3 fundamental errors. Explain `const` behavior.
+> <br>
+> **4. Broken Code:**
+> ```csharp
+> DateTime dueDate = 2023-12-31;
+> decimal price = $19.99;
+> char initial = "A";
+> ```
+> **Task:** Correct 3 type initialization errors.
+> <br>
+> **5. Broken Code:**
+> ```csharp
+> int hoursWorked = 8.5;
+> bool isOvertime = 1;
+> string message = 'Shift complete';
+> ```
+> **Task:** Fix 3 type mismatches. Explain proper literals.
+
+### Memory Management
+When you create a variable, C# needs to plan ahead for the space it'll occupy in memory. It's like reserving a specific size storage unit - you need to know exactly how much space you'll need:
+
+```csharp
+int age = 25;     // 32 bits reserved
+double salary = 50000.00;  // 64 bits reserved
+```
+
+> [!INSIGHT] Memory Allocation
+> Each type declaration gives C# precise instructions for memory allocation. No guesswork needed - just clean, efficient storage.
+
+### Type Safety
+Type consistency ensures your operations behave predictably across your codebase. Consider division:
+
+```csharp
+// Integer division
+int result = 5 / 2;  // 2
+// Float division
+float precise = 5f / 2f;  // 2.5
+```
+
+> [!DEFINITION] Type Safety
+> The guarantee that operations will behave consistently based on their types, preventing unexpected bugs and crashes.
+
+#### Practical Impact
+In real applications, type safety becomes crucial. Financial calculations, data processing, or any situation where precision matters - having guaranteed behavior makes your code reliable and maintainable.
+
+Think of types as both an organizational system and a safety net. They help C# manage memory efficiently while ensuring your operations remain consistent and predictable throughout your code.
+
+> [!example]- **Exercises - Output Prediction (5 problems)**  
+> **Predict console output then verify**  
+>  
+> **1. Code:**
+> ```csharp
+> int a = 5, b = 3;
+> double result = a / b;
+> Console.WriteLine(result);
+> ```
+> **Task:** Predict output. Why is it not 1.666..., and how can we modify the code to get `1.666...`?
+> <br>
+> **2. Code:**
+> ```csharp
+> int x = 10;
+> x = x + x * 2;
+> Console.WriteLine(x);
+> ```
+> **Task:** Predict the final value of `x`. Explain the order of operations (multiplication vs. addition).
+> <br>
+> **3. Code:**
+> ```csharp
+> string s = "7";
+> int n = 3;
+> Console.WriteLine(s + n + n);
+> ```
+> **Task:** Predict output. Explain how string concatenation works when combining strings and numbers.
+> <br>
+> **4. Code:**
+> ```csharp
+> double d = 1/2 + 1.0/2;
+> Console.WriteLine(d);
+> ```
+> **Task:** Predict result. How do integer and floating-point divisions differ? Fix it so the output is `1.0`.
+> <br>
+> **5. Code:**
+> ```csharp
+> Console.WriteLine(10 - 2 * 3 + 5);
+> ```
+> **Task:** Predict the output. Show the operator precedence steps (multiplication vs. addition vs. subtraction).
+
+--- 
 
 Now you may have noticed that we use the word *variable*. This seemingly implies that the value held can, well, vary. This is true! C#'s variables may be re-assigned/bound by default. To cover cases where this is not desired, the const keyword is used.
 
@@ -41,7 +161,7 @@ Now you may have noticed that we use the word *variable*. This seemingly implies
 >y = 0; // this will cause an error
 >```
 
-Now you may notice, we now have this idea that a variable's value can change throughout the execution of your program. After line 1, `x == 7` would return `true`, however after line 2 it would return `false`.  This means if I hand you this code and ask: "What value does x have", both 7 and 15 would be valid answers. To handle this, when we talk about code, we need to be specific about where in our program we are referring to. This allows us to talk about our code in different *states*.
+We now have this idea that a variable's value can change throughout the execution of your program. After line 1, `x == 7` would return `true`, however after line 2 it would return `false`.  This means if I hand you this code and ask: "What value does x have", both 7 and 15 would be valid answers. To handle this, when we talk about code, we need to be specific about the place in our program we are referring to. This allows us to talk about our code in different *states*.
 
 >[!abstract] State
 >
@@ -71,8 +191,8 @@ Now you may notice, we now have this idea that a variable's value can change thr
 >>
 | after line # runs | x   | y   | isBigger |
 | ----------------- | --- | --- | -------- |
-| 1                 | 37  | dne | dne      |
-| 2                 | 37  | 12  | dne      |
+| 1                 | 37  | - | -     |
+| 2                 | 37  | 12  | -      |
 | 3                 | 37  | 12  | false    |
 | 5                 | 37  | 12  | false    |
 | 7                 | 12  | 12  | false    |
@@ -80,17 +200,68 @@ Now you may notice, we now have this idea that a variable's value can change thr
 
 This let's us talk about what the data in our program is like at any point, which, now that this can change wildly line per line, seems pretty handy to me. This also let's us do something nice: we can now look at how this data changes to *better understand* what our code is doing. Instead of a bunch of expressions we try to follow, we can also look at how the state of our program changes over time to better understand how it works. This is incredibly useful when debugging code, where we often end up programming behavior wrong, and the only way to see that is to find that our stored values are off!
 
-**EXERCISE: fill out the program state line by line here.**
-
-**EXERCISE: given the following prompt and code, fill out a state table to find where the implementation is wrong.**
+> [!example]- **Exercises - State Tracing (5 problems)**  
+> **Create variable state tables**  
+>  
+> **1. Code:**
+> ```csharp
+> int a = 5;
+> a += 2;
+> int b = a + 2;
+> bool eq = (a == b);
+> ```
+> **Task:** Track values after each line.
+> <br>
+> **2. Code:**
+> ```csharp
+> string s = "Hi";
+> s += " there";
+> int len = s.Length;
+> bool empty = (len == 0);
+> ```
+> **Task:** Show state evolution.
+> <br>
+> **3. Code:**
+> ```csharp
+> int x = 10, y = 5;
+> x = y;
+> y *= 2;
+> bool test = (x > y);
+> ```
+> **Task:** Create state table with comments.
+> <br>
+> **4. Code:**
+> ```csharp
+> double d = 3.5;
+> int i = (int)d;
+> d = i / 2.0;
+> ```
+> **Task:** Track types and values.
+> <br>
+> **5. Code:**
+> ```csharp
+> bool a = true, b = false;
+> bool c = (a == b);
+> a = !c;
+> ```
+> **Task:** Show boolean state changes.
+>  
+> [!info] **Fillable State Table**  
+> You might create a table like below to record each variable’s state after each line.  
+>  
+> > [!example] **Unfilled State Table**  
+> > | Line | a     | b     | eq    | Notes                        |  
+> > |-----:|:-----:|:-----:|:-----:|:-----------------------------|  
+> > | 1    |       |       |       | int a = 5;                   |  
+> > | 2    |       |       |       | a += 2;                      |  
+> > | 3    |       |       |       | int b = a + 2;               |  
+> > | 4    |       |       |       | bool eq = (a == b);          |  
 
 Now there may be some question about how this works under the hood. Well, notice that when we define a variable, we must give it a type. This is important: *Programming languages use types not only to define what kind of value something will be, but also how much space it will take*. So when we create a variable, C# first looks at the type, remember an int is a 32bit whole number, right? Well, C# will find a 32-bit chunk of memory and reserve it for your variable. We also need to name it: this name is how C# finds the variable in memory, this is how it determines its *address*.
 
 However, this raises a question: if we are reserving space in memory for these variables, how/when are they ever freed? 
 
-The how: C# uses a complicated piece of software, called a garbage collector, to detect when a variable will not be used again in the program, and will release the reservation of the memory thereafter.
-
-**Example of program with comments denoting when each variable can now be freed**
+C# uses what's called a garbage collector, to detect when a variable will not be used again in the program, "releasing" it from memory thereafter.
 
 C# also recognizes that it can be nice to have manual control over this as well, providing tools to allow us to control where a variable will be available explicitly, rather than letting the garbage collector take all the fun from us. It does so using the concept of define *scopes*.
 
@@ -115,99 +286,200 @@ C# also recognizes that it can be nice to have manual control over this as well,
 >>}
 >>```
 
-## Using Variables With Expressions
-- remember an expression evaluates to a value!
-	- When assigning -> evaluate on the right before storing on the left
-	- Must evaluate to the correct type!
-- When we use variables, it actually evaluates to… the value it holds!
-	- Therefor -> we can use variables in expressions freely!
+> [!example]- **Exercises - Scope Identification (5 problems)**  
+> **Find and fix scope violations**  
+>  
+> **1. Code:**
+> ```csharp
+> {
+>     int secret = 42;
+> }
+> Console.WriteLine(secret);
+> ```
+> **Task:** Diagnose the error. Propose two fixes (e.g., declare `secret` outside the block).
+> <br>
+> **2. Code:**
+> ```csharp
+> {
+>     string name = "Alan";
+> }
+> name = "Alice";
+> Console.WriteLine(name);
+> ```
+> **Task:** Identify issue. Rewrite so `name` remains accessible where it’s needed.
+> <br>
+> **3. Code:**
+> ```csharp
+> {
+>     int localNumber = 3;
+>     localNumber = localNumber + 5;
+> }
+> localNumber = localNumber * 2;
+> Console.WriteLine(localNumber);
+> ```
+> **Task:** Fix the scope error so `localNumber` can be used later.
+> <br>
+> **4. Code:**
+> ```csharp
+> int x = 5;
+> {
+>     int x = 10;
+>     Console.WriteLine(x);
+> }
+> ```
+> **Task:** Explain the conflict (shadowing). Demonstrate how to rename or properly declare variables without error.
+> <br>
+> **5. Code:**
+> ```csharp
+> {
+>     FileStream fs = new FileStream("data.txt", FileMode.Open);
+> }
+> fs.Close();
+> ```
+> **Task:** Identify the scope problem. Suggest two solutions (e.g., declare `fs` outside the block, or close it inside).
 
-To understand how we can use variables with expressions, and vice versa, first let's recall our definition of an expression:
+---
+## Using Variables With Expressions
+
+### Foundational Concepts
+- **Expressions evaluate to values** - This remains true even when variables are involved
+- **Assignment requires full evaluation** - Right-hand side resolves completely before storage
+- **Type compatibility is mandatory** - Evaluated result must match variable's declared type
+- **Variables act as value proxies** - Substitute their stored value in expressions
+
+### Variables in Expressions
+Let's revisit our core definition:
 
 >[!Definition]
 >
 > An *expression* is a set of values and operators which evaluate to become a single value.
 
-Notice that we say *values and operators*, well it turns out the important part is actually the second half: *which evaluate to a single value*. Well remember: Variables exist to store a single value of some type! What do you think happens when we use a variable in code?
+Variables integrate seamlessly with this definition. When a variable appears in code:
 
 ```csharp
 int x = 32;
-
-int y = x; // how does this work?
+int y = x; // What occurs here?
 ```
 
-When we use a variable in code, the program will substitute the value held there in the code. For our intents, this means that we evaluate the variable and it results in the value stored there.
-The order of steps in our code:
-1. Create an integer variable x, store 32 in it.
-2. Create a variable y
-	1. evaluate x (to 32)
-	2. store the result in y.
+**Execution sequence:**
+1. Create integer `x` storing 32
+2. Create integer `y`
+   - Evaluate `x` → 32
+   - Store result in `y`
 
-This allows us to do two things:
-1. update our definition of an expression to: 
+This behavior leads us to recognize:
+
+- Variables are _evaluable entities_ in expressions
+- Using a variable retrieves its **current value**
+
+### The Assignment Process
+Our updated definition expands expression components:
+
 >[!Definition]
 >
->An *expression* is a set of operators and/or entities which combine to evaluate to a single value.
+> An *expression* is a set of operators and/or entities which combine to evaluate to a single value.
 
-2. and define the behavior of *assignment*/*binding*:
+This directly informs assignment mechanics:
+
 >[!abstract] Assignment
 >
 >>[!Definition]
 >>
->>Before we *assign* or *bind* a value to a variable, the expression is fully evaluated.
+>> Before we *assign* or *bind* a value to a variable, the expression is fully evaluated.
 >
 >>[!example]
->>This means that in the following statement
->>```csharp
->> int x = 32 + 7
->>```
->>The order of actions performed are:
->>1. create an `int` sized box, called by `x`, in memory
->>2. evaluate `32 + 7` to `39`
->>3. store `39` in `x`
->
-> This hopefully makes intuitive sense: An expression isn't a known value, it just evaluates to one. So you must evaluate it before you can store its resulting value.
+>> ```csharp
+>> int x = 32 + 7;
+>> ```
+>> **Execution steps:**
+>> 1. Allocate `int` storage named `x`
+>> 2. Evaluate `32 + 7` → 39
+>> 3. Store 39 in `x`
 
-This seems great! However, a question that may have crossed your mind is: what happens when you try to store an expression of the wrong type in a variable?
+This "evaluate first, store second" principle ensures expressions always resolve to concrete values before assignment.
 
-Well if you run the following code:
+### Type Safety Enforcement
+Consider this type mismatch:
+
 ```csharp
-int x = "hello";
+int x = "hello"; // Invalid assignment
 ```
 
-You get an error: 
+The compiler error:
 ```csharp
 error CS0029: Cannot implicitly convert type 'string' to 'int'
 ```
 
-Try reading this error and try to understand it from the error alone. When programming, it's incredibly common to lose sight of what an error tells us. Here it tells us precisely what is wrong: It's trying to convert the string to be used in the integer variable. Since this cannot be done, you get an error. 
+This demonstrates **type safety** - the system prevents using incompatible types, analogous to needing specific tools for particular tasks. Key benefits:
+- Predictable program behavior
+- Prevention of invalid operations
+- Clear error diagnostics
 
-This is a component of *type safety*, which ensures that we are using values and expressions which fit the types we say we are working with. This is desirable in programming in the same way that when you ask someone for a pen, you don't want them to hand you a loofa. We want our code to work predictably, getting values or objects of the type we expect is paramount.
-
-This is great for talking about how we store values, but what about when we want to use them? Well we can combine these things:
+### Expression Evaluation in Practice
+Combining variables in complex expressions:
 
 ```csharp
-// let's represent a rectangle!
+// Rectangle dimensions
 int length = 5;
 int width = 7;
-
 int rectangle_area = length * width;
 ```
 
-Remember from our description earlier, line 5 executes in the following order:
-1. Create an integer sized and shaped box called by `rectangle_area`.
-2. Evaluate length to the int `5`
-3. Evaluate width to the int `7`
-4. evaluate `7 * 5`
-5. store `35` in `rectangle_area`
+**Evaluation sequence:**
+1. Evaluate `length` → 5
+2. Evaluate `width` → 7
+3. Multiply results → 35
+4. Store 35 in `rectangle_area`
 
-That's a lot of stuff for one line of code! Notice, when we evaluate expressions that the first step seems to be evaluate all of the variables, and then continue based on the rules of the types. This means that we can update our order of operations for *all* types:
+This demonstrates our fundamental rule:
 
->[!Definition]
+>[!Important]
+> **Evaluation Priority**  
+> Variables always resolve to their **current values** before any operations execute.
 
-
-> For all expressions of any type, evaluating variables precedes *any other operation*.
-
-
+> [!example]- **Exercises - Evaluation Sequencing (5 problems)**  
+> **Step through expression evaluation**  
+>  
+> **1. Code:**
+> ```csharp
+> int a = 3;
+> int b = a * a + 2;
+> ```
+> **Task:** Show evaluation steps (order of multiplication, addition, assignment). Final values?
+> <br>
+> **2. Code:**
+> ```csharp
+> int x = 5;
+> int y = x + 2 * x;
+> x = y - x;
+> ```
+> **Task:** Trace the order of operations and assignments. Final `x` and `y`?
+> <br>
+> **3. Code:**
+> ```csharp
+> double d = (int)2.9 + Math.Ceiling(1.1);
+> ```
+> **Task:** Break down evaluation sequence. Which part runs first? Why?
+> <br>
+> **4. Code:**
+> ```csharp
+> string s = "a" + 1 + 2;
+> string t = 1 + 2 + "a";
+> ```
+> **Task:** Explain how each expression is evaluated. Why do we get different results?
+> <br>
+> **5. Code:**
+> ```csharp
+> int a = 1, b = 2, c = 3;
+> a = b = c;
+> ```
+> **Task:** Show right-to-left assignment flow (i.e., `b = c` then `a = b`).
 ---
-CONCLUSION SUMMARY PRACTICE PROBLEMS
+
+**Core Principles:**
+1. Variables serve as value proxies in expressions
+2. Complete evaluation precedes any assignment
+3. Type compatibility is rigorously enforced
+4. Complex expressions resolve variables before performing operations
+
+This understanding of variables and expressions forms the foundation for managing program state and data manipulation.
