@@ -22,7 +22,7 @@ Our journey begins with the most fundamental building blocks: [[Chapter 1 - Valu
 
 **[[Chapter 2 - Variables and Scope]]**- Managing data and memory within your programs.
 
-**🚧Chapter 3 - Control Flow** - Dictating the behavior of your programs.
+**[[Chapter 3.1 - Branching]]** - Dictating the behavior of your programs.
 
 **🚧Chapter 4: Collections** - Efficiently grouping and handling data.
 
