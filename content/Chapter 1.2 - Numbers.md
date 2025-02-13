@@ -4,7 +4,7 @@ draft: false
 aliases:
   - numbers
 ---
-
+	
 Having explored Boolean algebra, now we can venture back to more familiar territory: working with numbers!
 
 There are two primary types of number we will consider in this course:

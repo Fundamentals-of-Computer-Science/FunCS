@@ -34,7 +34,7 @@ In this book we will often find ourselves needing to define some terms. These ar
 Notice that with each value, we associate a defining group it belongs to. This is its [[Types (Programming)|type]]. For now, trust me when I say that for any value you can define, it belongs to one and only one type.
 
 > [!abstract] Types
->> [!note] Types
+>> [!note] Definition
 >> A type is a defining shape of data, it describes a set of valid values which follow a set of restrictions.
 >
 >> [!example] Examples
@@ -52,7 +52,7 @@ However, all we've done is describe data. These make up the nouns of our languag
 Similar to evolution and its inevitable path to crustaceans, when running code, a lot of what it will do is take more complex bodies of code, and simplify it until all of its limbs are simple values it can operate on. Similar to this process in evolution, called carcinisation, we will define the processes of *evaluation*. Evaluation is the process of simplifying terms until they become a single atomic value. This process uses *operators*: the functions/modifications we perform on data.
 
 > [!abstract] Operators 
->> [!DEFINITION] 
+>> [!definition] 
 >> Operators describe computations which can be performed on a set number of values of a given type.
 >
 > Notice operators also consider *types*. If you pay close attention, many problems in program navigate typing. In this case, the types are used to describe what kind of values the operator acts on.

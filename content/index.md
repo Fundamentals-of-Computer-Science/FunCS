@@ -32,5 +32,5 @@ Our journey begins with the most fundamental building blocks: [[Chapter 1 - Valu
 
 Now enough of that, let's get started with [[Chapter 1 - Values and Types]].
 
-
+## Note: [[Branching Lab]] can be found here.
 ---
