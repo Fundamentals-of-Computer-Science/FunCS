@@ -24,6 +24,8 @@ Our journey begins with the most fundamental building blocks: [[Chapter 1 - Valu
 
 **[[Chapter 3.1 - Branching]]** - Dictating the behavior of your programs.
 
+[[Chapter 3.2 - Looping]] - Allows for repetition in programs.
+
 **🚧Chapter 4: Collections** - Efficiently grouping and handling data.
 
 **🚧Chapter 5: Functions** - Organizing code and performing operations on data.
