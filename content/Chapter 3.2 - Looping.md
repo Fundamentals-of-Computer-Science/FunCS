@@ -217,7 +217,7 @@ This mental model helps us predict loop behavior and identify potential problems
 >- The current number
 >- Whether it was skipped or printed
 >
->Remember to identify the precondition, postcondition, and loop invariant for each exercise.
+>Remember to identify the precondition and postcondition for each exercise.
 
 In our next section, we'll explore different patterns of loops and how they can be used to solve various types of problems. But first, make sure you're comfortable with the basic while loop structure and can predict its behavior by thinking through the execution step by step.
 
@@ -372,7 +372,7 @@ This pattern ensures our program has valid data to work with, making our program
 >Write a loop that calculates the sum of numbers from 1 to 5. Create an iteration table tracking both the counter and sum at each step. State the precondition and postcondition clearly.
 >
 >**Exercise 2: Product Calculation**
->Write a loop that calculates the product of numbers from 1 to 4. Fill in a state table showing how both the counter and product change in each iteration. Identify the loop invariant.
+>Write a loop that calculates the product of numbers from 1 to 4. Fill in a state table showing how both the counter and product change in each iteration. Identify the pre/post conditions
 >
 >**Exercise 3: String Concatenation**
 >Write a loop that concatenates the string "Hi" three times. Build an iteration table tracking both the counter and result string at each step.
@@ -542,8 +542,7 @@ while (!found && hasMore)
 >[!example] Practice: State Management
 >Consider this loop that finds the largest number divisible by both 3 and 4 that's less than 100. What are its:
 >1. Preconditions
->2. Loop invariant
->3. Postconditions
+>2. Postconditions
 >
 >```csharp
 >int number = 100;
@@ -562,7 +561,7 @@ while (!found && hasMore)
 >
 >Try to identify each condition before checking the solution.
 
-Understanding how state changes throughout a loop's execution is crucial for writing correct programs. By thinking carefully about our preconditions, loop invariants, and postconditions, we can ensure our loops do exactly what we intend.
+Understanding how state changes throughout a loop's execution is crucial for writing correct programs. By thinking carefully about our preconditions and postconditions, we can ensure our loops do exactly what we intend.
 
 In our next section, we'll explore more advanced loop concepts, building on our understanding of state management to handle more complex programming scenarios.
 
@@ -641,7 +640,7 @@ Notice how the inner loop completes all its iterations before the outer loop mov
 >Build a state table for the first two rows showing how the loop variables change.
 >
 >**Exercise 3: Grid of Characters**
->Write nested loops that print a 3×3 grid of the character 'X'. Explain the loop invariant for the inner loop and provide an iteration table for one complete pass of the outer loop.
+>Write nested loops that print a 3×3 grid of the character 'X'. Provide an iteration table for one complete pass of the outer loop, and one for the inner loop.
 >
 >For each exercise:
 >- State the preconditions and postconditions
