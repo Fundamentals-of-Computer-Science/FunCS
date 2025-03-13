@@ -5,7 +5,6 @@ aliases:
   - arrays
   - collections
 ---
-# Chapter 3.3: Arrays - Collections of Data
 
 In our previous chapters, [[Chapter 3.1 - Branching]] and [[Chapter 3.2 - Looping]], we covered ideas of controlling the behavior of code. From making decisions, to automating the repetition of tasks. Now, having looked at how we do stuff for a bit, let's turn our attention to the other half of the coin: how we store data.
 
