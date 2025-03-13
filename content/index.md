@@ -26,7 +26,9 @@ Our journey begins with the most fundamental building blocks: [[Chapter 1 - Valu
 
 [[Chapter 3.2 - Looping]] - Allows for repetition in programs.
 
-**🚧Chapter 4: Collections** - Efficiently grouping and handling data.
+[[Chapter 4.1 - Arrays]] - Efficiently grouping and handling contiguous data.
+
+**🚧Chapter 4.2: Linked Lists** - Handling data of varying size effectively.
 
 **🚧Chapter 5: Functions** - Organizing code and performing operations on data.
 
