@@ -1288,4 +1288,4 @@ We've also introduced two-dimensional arrays, which extend the array concept to 
 
 As you continue your programming journey, you'll find that arrays form the foundation for many more complex data structures and algorithms. Mastering arrays is an essential step toward becoming a proficient programmer.
 
-In our next chapter, we'll explore the main alternative to arrays: [[Linked Lists]]. Once you understand these two, you will effectively be able to create any other kind of data structure!
+In our next chapter, we'll explore the main alternative to arrays: [[Chapter 4.2 - Linked Lists|linked lists]]. Once you understand these two, you will effectively be able to create any other kind of data structure!
