@@ -101,6 +101,7 @@ This chapter builds directly on our understanding of variables, types, and scope
 > > [!Definition]
 > > 
 > > A method is a function defined within a class that performs operations related to that class, often accessing or modifying the object's fields.
+> > 
 > 
 > Methods define the behavior of objects - what they can do. Methods can access the object's fields, accept parameters for input, and return values as output.
 > 
