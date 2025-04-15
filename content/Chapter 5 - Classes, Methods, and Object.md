@@ -252,7 +252,8 @@ Key points about methods:
 - Methods can have parameters and return values, just like regular functions
 - Methods operate on the specific object they're called on
 
-> [!important] Key Insight Methods have direct access to the fields of the object they belong to. This means they can read and modify the object's state without needing to pass the state as parameters or return it as values.
+> [!important] Key Insight 
+> Methods have direct access to the fields of the object they belong to. This means they can read and modify the object's state without needing to pass the state as parameters or return it as values.
 
 ### Putting State and Behavior Together
 
