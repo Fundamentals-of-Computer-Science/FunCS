@@ -56,9 +56,12 @@ This chapter builds directly on our understanding of variables, types, and scope
 > > }
 > > ```
 > 
-> [!important] Try It Yourself Examine the Counter class above. What aspect of a counter's state is represented? What behaviors can a Counter object perform?
-> 
-> State: count (int) Behaviors: Increment() and GetCount()
+> >[!important] Try It Yourself 
+> >
+> >Examine the Counter class above. What aspect of a counter's state is represented? What behaviors can a Counter object perform?
+> > 
+> >State: count (int) 
+> >Behaviors: Increment() and GetCount()
 
 > [!abstract] Object
 > 
@@ -86,9 +89,11 @@ This chapter builds directly on our understanding of variables, types, and scope
 > > Console.WriteLine("Click count: " + clickCount.GetCount()); // Displays: 1
 > > ```
 > 
-> [!important] Try It Yourself How many Counter objects exist in the example above? What would be displayed if we called gameScore.GetCount() again?
-> 
-> Answer: Two Counter objects exist (gameScore and clickCount). If we called gameScore.GetCount() again, it would still display 2 since we haven't changed its state since the last increment.
+> >[!important] Try It Yourself 
+> >
+> >How many Counter objects exist in the example above? What would be displayed if we called gameScore.GetCount() again?
+> >
+> > Answer: Two Counter objects exist (gameScore and clickCount). If we called gameScore.GetCount() again, it would still display 2 since we haven't changed its state since the last increment.
 
 > [!abstract] Method
 > 
