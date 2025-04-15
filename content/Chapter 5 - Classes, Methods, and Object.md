@@ -30,6 +30,7 @@ This chapter builds directly on our understanding of variables, types, and scope
 > > [!Definition]
 > > 
 > > A class is a user-defined type that serves as a blueprint for creating objects, specifying both the data (fields) and operations (methods) that characterize all objects of that type.
+> > 
 > 
 > A class combines data representation with the operations that manipulate that data, defining both what an object knows (its state) and what an object can do (its behavior).
 > 
@@ -53,6 +54,7 @@ This chapter builds directly on our understanding of variables, types, and scope
 > >    }
 > > }
 > > ```
+> > 
 > 
 > >[!important] Try It Yourself 
 > >
@@ -60,11 +62,13 @@ This chapter builds directly on our understanding of variables, types, and scope
 > > 
 > >State: count (int) 
 > >Behaviors: Increment() and GetCount()
+> >
 
 > [!abstract] Object
 > > [!Definition]
 > > 
 > > An object is a specific instance of a class that exists in memory during program execution, with its own unique state and the ability to perform the behaviors defined by its class.
+> > 
 > 
 > Objects are the dynamic entities created from class blueprints. Multiple objects of the same class type can exist simultaneously, each with its own independent state.
 > 
