@@ -66,7 +66,7 @@ This chapter builds directly on our understanding of variables, types, and scope
 
 > [!abstract] Object
 > > [!Definition]
-> > 
+> > 
 > > An object is a specific instance of a class that exists in memory during program execution, with its own unique state and the ability to perform the behaviors defined by its class.
 > > 
 > 
@@ -97,9 +97,8 @@ This chapter builds directly on our understanding of variables, types, and scope
 > > Answer: Two Counter objects exist (gameScore and clickCount). If we called gameScore.GetCount() again, it would still display 2 since we haven't changed its state since the last increment.
 
 > [!abstract] Method
-> 
 > > [!Definition]
-> > 
+> > 
 > > A method is a function defined within a class that performs operations related to that class, often accessing or modifying the object's fields.
 > > 
 > 
