@@ -27,15 +27,12 @@ This chapter builds directly on our understanding of variables, types, and scope
 ## Defining Our Terms
 
 > [!abstract] Class
-> 
 > > [!Definition]
-> > 
 > > A class is a user-defined type that serves as a blueprint for creating objects, specifying both the data (fields) and operations (methods) that characterize all objects of that type.
 > 
 > A class combines data representation with the operations that manipulate that data, defining both what an object knows (its state) and what an object can do (its behavior).
 > 
 > > [!example]
-> > 
 > > ```csharp
 > > // A simple Counter class
 > > class Counter {
@@ -1659,7 +1656,8 @@ Reference types (class, string, array, etc.) can hold the value null. Historical
 
 > [!abstract] Nullable Reference Types  
 > 
-> > [!Definition]   Nullable reference types are a C# feature (enabled at the project level or via directives) that changes the default assumption: reference types are considered non-nullable unless explicitly marked otherwise. This helps prevent null reference exceptions by making potential nulls explicit and enabling compiler warnings.   Using the ? suffix on a reference type indicates that the variable is allowed to be null.
+> > [!Definition]
+> > Nullable reference types are a C# feature (enabled at the project level or via directives) that changes the default assumption: reference types are considered non-nullable unless explicitly marked otherwise. This helps prevent null reference exceptions by making potential nulls explicit and enabling compiler warnings.   Using the ? suffix on a reference type indicates that the variable is allowed to be null.
 
 ## Conclusion
 
