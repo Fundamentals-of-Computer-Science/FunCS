@@ -30,9 +30,7 @@ Our journey begins with the most fundamental building blocks: [[Chapter 1 - Valu
 
 [[Chapter 4.2 - Linked Lists]] - Handling data of varying size effectively.
 
-**🚧Chapter 5: Functions** - Organizing code and performing operations on data.
-
-**🚧Chapter 6: Custom Types and Classes** - Modeling real-world concepts in your code.
+**[[Chapter 5 - Classes, Methods, and Object]]** - Modeling real-world concepts in your code.
 
 Now enough of that, let's get started with [[Chapter 1 - Values and Types]].
 
