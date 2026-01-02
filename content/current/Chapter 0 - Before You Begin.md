@@ -155,4 +155,4 @@ The protocol above takes more time per problem but less time overall. You won't 
 - Definitions and translations are precise. Learn them exactly.
 - Practice actively using the protocol. What you put in determines what you get out.
 
-Now you are ready to start on [[Chapter 1]]!
+Now you are ready to start on [[Chapter 1 - Booleans]]!
