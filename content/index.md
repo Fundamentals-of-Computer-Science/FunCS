@@ -5,34 +5,31 @@ draft: false
 
 # Fundamentals of Computer Science
 
-Programming is about solving problems. This book shows you how.
+Welcome. This book teaches programming from the ground up.
 
-The approach is simple: understand the data first, then compute with it. Each chapter focuses on one type of data: booleans, integers, arrays, and custom data types. For every type, you'll answer the same five fundamental questions:
+Each chapter focuses on one type of data: booleans, integers, arrays, and eventually your own custom types. For each type, you'll work through five questions: How do I store this data? What operations come built in? How does it affect what the program does? How do I define my own computations with it? How do I combine it into larger structures?
 
-1. **How do I store this data?**
-2. **What operations are built in?**
-3. **How does it control program behavior?**
-4. **How do I define my own computations?**
-5. **How do I combine this data into larger structures?**
+These questions repeat every chapter. By the third time through, you'll find yourself asking them automatically whenever you encounter something new. That's the goal: not just learning facts, but building a way of thinking.
 
-These questions repeat every chapter. By the end of the book, you'll ask them instinctively whenever you encounter a new type.
+## What to Expect
 
-## How To learn With This Book
+Two things shape how this book teaches: precise language and deliberate practice.
 
-Precise language matters. You'll learn exact definitions for terms and exact translations for code. When you see `bool x = true;`, you'll know to say: "Create a boolean variable named x and bind the value true to it."
+Programming requires saying exactly what you mean. Vague descriptions lead to vague understanding, which leads to bugs you can't explain. So you'll learn specific vocabulary: what it means to *bind* a value to a variable, what it means to *evaluate* an expression. When you see `bool x = true;`, you'll know to read it as "create a boolean variable named x and bind the value true to it." This precision pays off when code breaks and you need to describe what went wrong.
 
-Practice comes in two directions: reading code and writing code. Both are tested. After each exercise, you compare your answer to a model and note what you missed. This self-correction step isn't optional, it's where the learning happens.
+Practice comes in two directions. Sometimes you'll see code and translate it to English. Other times you'll see a description and write the code. Both directions matter, because reading and writing are different skills. After each exercise, you'll compare your answer to a model and note specifically what you got wrong. This self-correction step is where most of the learning actually happens, so resist the temptation to skip it.
 
-If you're new here, start with Chapter 0.
 
-## Chapters
+## Where to Start
 
-**[[Chapter 0 - Before You Begin]]** — What programming is, how to practice, and what to expect.
+If you're new, begin with Chapter 0. It introduces the core ideas (data, computation, types) and walks you through the practice method you'll use throughout.
 
-**[[Chapter 1 - Booleans]]** — True and false. The simplest type, and your first pass through the five questions.
+**[[Chapter 0 - Before You Begin]]**: What programming is, how this book teaches, and how to practice effectively.
 
-**[[Chapter 2 - Numbers]]** — Whole and decimal numbers. Arithmetic, counting loops, and numeric functions.
+**[[Chapter 1 - Booleans]]**: True and false values. The simplest data type, and your first complete pass through the five questions.
 
-**[[Chapter 3 - Arrays]]** — Sequences of data. Indexing, iteration, and strings as character arrays.
+**[[Chapter 2 - Numbers]]**: Integers and decimals. Arithmetic, comparisons, and counting loops.
 
-**[[Chapter 4 - Classes]]** — Custom types. Modeling real things with structured data.
+**[[Chapter 3 - Arrays]]**: Ordered sequences. Indexing, iteration, and strings as sequences of characters.
+
+**[[Chapter 4 - Classes]]**: Defining your own types. Modeling real things with structured data.
