@@ -1206,7 +1206,7 @@ Finally, we compared linked lists with arrays to help you make the right choice 
 
 You may have noticed that the code in this chapter was often repetitive. We frequently wrote similar traversal patterns, search operations, and modification sequences. This repetition isn't just tiresome—it's also error-prone and makes our programs harder to understand.
 
-In the next chapter, we'll learn how to define and use methods to encapsulate these operations. Methods will allow us to:
+In the next chapter, we'll learn how to define and use [[Chapter 5 - Classes, Methods, and Object|methods]] to encapsulate these operations. Methods will allow us to:
 
 - Package common linked list operations into reusable units
 - Give meaningful names to complex operations

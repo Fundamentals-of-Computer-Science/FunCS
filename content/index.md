@@ -5,34 +5,36 @@ draft: false
 
 # Fundamentals of Computer Science
 
-## A Definitions-First Approach to Computer Science
+Programming is about solving problems. This book shows you how.
 
-Welcome, learners! This website is your guide to mastering the fundamentals of Computer Science, Computer Programming, and Problem Solving. Consider it your home base for navigating the concepts within this book.
+The approach is simple: understand the data first, then compute with it. Each chapter focuses on one type of data—booleans, integers, strings, arrays. For every type, you'll answer the same five fundamental questions:
 
-This textbook takes a definitions-focused approach to learning. We believe that a strong understanding starts with precise definitions. These definitions will form the bedrock of your knowledge, upon which you'll build a comprehensive understanding of programming concepts through examples and practice. Each definition is carefully illustrated with examples. Don't worry if a definition doesn't immediately click: Instead, treat them as fundamental truths. As you work through the examples, you'll see how these definitions operate in practice, solidifying your understanding.
+1. **How do I store this data?**
+2. **What operations are built in?**
+3. **How does it control program behavior?**
+4. **How do I define my own computations?**
+5. **How do I combine this data into larger structures?**
 
-Our journey begins with the most fundamental building blocks: [[Chapter 1 - Values and Types|values and types]]. From there, we'll progressively build your knowledge, adding new concepts and restrictions upon these core ideas along the way. Expect a gradual start with plenty of hands-on practice before moving to more complex coding challenges. This approach ensures a solid foundation for later concepts and the rapid pace of later chapters.
+These questions repeat every chapter. By the end of the book, you'll ask them instinctively whenever you encounter a new type.
 
-**Our Learning Path:**
+## How This Book Teaches
 
-**[[Chapter 1 - Values and Types]]** - Understanding the core of data and its representation.
-	- [[Chapter 1.1 - Booleans]]
-	- [[Chapter 1.2 - Numbers]]
-	- [[Chapter 1.3 - Chars and Strings]]
+Precise language matters. You'll learn exact definitions for terms and exact translations for code. When you see `bool x = true;`, you'll know to say: "Create a boolean variable named x and bind the value true to it."
 
-**[[Chapter 2 - Variables and Scope]]**- Managing data and memory within your programs.
+Practice comes in two directions: reading code and writing code. Both are tested. After each exercise, you compare your answer to a model and note what you missed. This self-correction step isn't optional—it's where learning happens.
 
-**[[Chapter 3.1 - Branching]]** - Dictating the behavior of your programs.
+If you're new here, start with Chapter 0.
 
-[[Chapter 3.2 - Looping]] - Allows for repetition in programs.
+## Chapters
 
-[[Chapter 4.1 - Arrays]] - Efficiently grouping and handling contiguous data.
+**[[Chapter 0 - Before You Begin]]** — What programming is, how to practice, and what to expect.
 
-[[Chapter 4.2 - Linked Lists]] - Handling data of varying size effectively.
+**[[Chapter 1 - Booleans]]** — True and false. The simplest type, and your first pass through the five questions.
 
-**[[Chapter 5 - Classes, Methods, and Object]]** - Modeling real-world concepts in your code.
+**[[Chapter 2 - Integers]]** — Whole numbers. Arithmetic, counting loops, and numeric functions.
 
-Now enough of that, let's get started with [[Chapter 1 - Values and Types]].
+**[[Chapter 3 - Floating-Point]]** — Decimals. Precision, rounding, and when integers aren't enough.
 
-## Note: [[Branching Lab]] can be found here.
----
+**[[Chapter 4 - Arrays]]** — Sequences of data. Indexing, iteration, and strings as character arrays.
+
+**[[Chapter 5 - Classes]]** — Custom types. Modeling real things with structured data.
