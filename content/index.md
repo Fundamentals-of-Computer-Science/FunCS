@@ -17,7 +17,7 @@ The approach is simple: understand the data first, then compute with it. Each ch
 
 These questions repeat every chapter. By the end of the book, you'll ask them instinctively whenever you encounter a new type.
 
-## How This Book Teaches
+## How To learn With This Book
 
 Precise language matters. You'll learn exact definitions for terms and exact translations for code. When you see `bool x = true;`, you'll know to say: "Create a boolean variable named x and bind the value true to it."
 
