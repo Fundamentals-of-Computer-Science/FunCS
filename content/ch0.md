@@ -8,38 +8,38 @@ permalink: ch0
 
 ## What is Programming?
 
-Programming is about solving problems. We do this in two steps: define the data, then compute with it.
+Programming is about solving problems. We do this in two steps: defining data, then computing with it. We then define these two concepts as:
 
 **Data:** Information stored by a computer. Numbers, text, true/false values, lists. These are all data.
 
 **Computation:** The transformation of data. Computation always has a before and after: what data goes in, what data comes out.
 
-We can write this as:
+Further, we can write this process as:
 
 ```
 data_in → data_out
 ```
 
-The arrow is the computation. It takes what's on the left and produces what's on the right.
+Where we represent computation with an arrow. It takes what's on the left and produces what's on the right.
 
 **Examples:**
 
 ```
 2 + 2 → 4
 ```
-Two numbers go in. One number comes out. The computation is addition.
+With addition, two numbers go in and One number comes out.
 
 ```
-"hello" made uppercase → "HELLO"
+uppercase "hello" → "HELLO"
 ```
-Text goes in. Different text comes out. The computation is uppercasing.
+Uppercase takes some text, and producs an all uppercase version. The data being computed is "hello", computed by uppercase to produce "HELLO".
 
 ```
 5 > 3 → true
 ```
-Two numbers go in. A true/false value comes out. The computation is comparison.
+> (greater than) takes two numbers and produces a boolean value.
 
-Every program you write will follow this pattern: define what data you're working with, then describe what transformations to apply.
+Every program you write will follow this pattern: define what data you're working with, then describe what transformations to apply.ßßß
 
 ---
 
@@ -51,7 +51,7 @@ First, you need to know how the library is organized. Books are grouped by genre
 
 Once you know this structure, you can search systematically. Compare the genre you want to each aisle until you find a match. Compare author names until you find the right section. Compare titles until you find your book. Each comparison is a computation: two pieces of data go in (what you're looking for, what you're looking at), and a result comes out (match or no match).
 
-Here's the key insight: if you don't know how the data is structured, finding a book is hard. You'd have to check every book in the library. But once you understand the structure, finding a specific book becomes almost trivial.
+If you don't know how the data is structured, finding a book is hard. You'd have to check every book in the library. But once you understand the structure, finding a specific book becomes almost trivial.
 
 This is why we start with data. Understand how information is organized, and the computation follows naturally.
 
@@ -64,10 +64,10 @@ This book follows the same pattern. Each chapter focuses on one type of data (bo
 | Strand | Question |
 |--------|----------|
 | **1. Data Definition** | How is this data stored? What values are valid? |
-| **2. Basic Computation** | What operations are built in? |
-| **3. Control Flow** | How does this data affect program behavior? |
-| **4. Functions** | How do I define my own computations? |
-| **5. Abstraction** | How do I build more complex data from this? |
+| **2. Basic Computation** | What operations are built in and available? |
+| **3. Control Flow** | How can we use this data to affect program behavior? |
+| **4. Functions** | How do we define our own computations? |
+| **5. Abstraction** | How do we build more complex data from this? |
 
 Every chapter answers these same five questions. The repetition is intentional. By the end of the book, you'll apply this structure instinctively to any new data type you encounter.
 
@@ -79,13 +79,13 @@ To help you think and communicate precisely about code, this book uses three too
 
 ### Definitions
 
-Key terms are defined precisely. These definitions are exact and memorizable.
+Key terms are defined precisely. These definitions are exact and meant to be memorized.
 
 When you see a definition, learn it. Don't paraphrase. The precision matters because vague language leads to vague thinking, and vague thinking leads to bugs.
 
 ### Translations
 
-Each piece of code has a corresponding English translation. These translations help you read and discuss code out loud. They are exact. Same code, same words, every time.
+Each piece of code has a corresponding English translation. These translations help you read and discuss code out loud. 
 
 **Example:**
 
@@ -94,11 +94,11 @@ bool x = true;
 ```
 → "Create a boolean variable named x, and store the value true in it."
 
-These translations are precise renderings of the code. When you read code, use these phrases. When you talk about code, use these phrases. The consistency builds fluency.
+These translations are precise renderings of the code. Try to internalize these, as it helps when reading code to have precise language to describe and think about it in.
 
 ### Visualizations
 
-Abstract concepts are accompanied by diagrams: memory layouts, flowcharts, data structures. The computer does things you cannot see directly. Visualizations make the invisible visible. Study them.
+Abstract concepts are accompanied by diagrams: memory layouts, flowcharts, data structures. The computer does things you cannot see from the code alone, and visualizations are one of the tools we use to try and show this behavior.
 
 ---
 
@@ -116,13 +116,15 @@ Practice works in two directions:
 
 Both directions matter. Reading code and writing code are different skills. You need both.
 
+There are also more hands on practice problems requiring you to solve problems from a prompt. The goal is to build your skills first in reading and writing correct syntax, then to solving problems with those tools.
+
 ### The Protocol
 
 The process below is more involved than you might expect. Each step has a purpose.
 
 For each exercise:
 
-1. **Write the problem by hand.** Paper, not screen.
+1. **Write the problem by hand.** Writing them by hand uses more of your attention than typing.
 
 2. **Attempt without looking back.** Turn off your screen. Work from memory.
 
@@ -144,7 +146,7 @@ This takes time. That's the point. Each step makes learning intentional.
 
 Why not skip steps? Because if you don't have a question in mind, finding an answer is hard. And if you don't have a question in mind, *remembering* the answer is harder. Copying patterns from examples without understanding produces weak knowledge that disappears before exams.
 
-The protocol above takes more time per problem but less time overall. You won't need to relearn material you never actually learned.
+The protocol above takes more time per problem but less time overall. You won't need to relearn material if you learn it thoroughly in the first place.
 
 ---
 
