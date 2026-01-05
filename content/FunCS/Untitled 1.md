@@ -1,3 +1,7 @@
+---
+draft: true
+---
+
 # Section 2: Sequential vs. Chained Branches - Point Calculation
 
 ## Stage 1: Analyzing Sequential Branches

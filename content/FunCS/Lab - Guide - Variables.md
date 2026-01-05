@@ -1,3 +1,7 @@
+---
+draft: true
+---
+
 # Step-by-Step Lab Guide - Variables
 
 ## Important: Always Start on Paper

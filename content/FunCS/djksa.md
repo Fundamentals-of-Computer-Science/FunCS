@@ -1,3 +1,7 @@
+---
+draft: true
+---
+
 Below is a revised version of the exercise sets that removes or replaces any use of `if` statements, loops (`for`, `while`, etc.), the increment/decrement operators (`++`, `--`), and the XOR (`^`) operator—while keeping the overall difficulty and variety of concepts consistent. Everything remains in collapsible callouts (Obsidian-style) and includes an example fillable table for state tracing.
 
 ---

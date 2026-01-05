@@ -1,3 +1,7 @@
+---
+draft: true
+---
+
 > [!abstract] Types
 >> [!note] Types
 >> A type is a defining shape of data, it describes a set of valid values which follow a set of restrictions.

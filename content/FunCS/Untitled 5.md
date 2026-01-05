@@ -1,4 +1,8 @@
-I’m making labs for my students that cover concepts in programming. These labs are their primary practice and learning spot. As such they should work to progress the knowledge and skill level of my students (depth) while also covering different skills and concepts (width). I do this by providing multiple projects where they must go through and complete the exercises, where each project is grouped by concept and skill, and the difficulty ramps in the project. I want to make a sequence of new ones which follow the same format, but working over methods and classes. I always try to have a dedicated debugging- project which is purely about debugging common errors and what they’ll see. Give them multiple reps and stuff. 
+---
+draft: true
+---
+
+I'm making labs for my students that cover concepts in programming. These labs are their primary practice and learning spot. As such they should work to progress the knowledge and skill level of my students (depth) while also covering different skills and concepts (width). I do this by providing multiple projects where they must go through and complete the exercises, where each project is grouped by concept and skill, and the difficulty ramps in the project. I want to make a sequence of new ones which follow the same format, but working over methods and classes. I always try to have a dedicated debugging- project which is purely about debugging common errors and what they’ll see. Give them multiple reps and stuff. 
 
   
 

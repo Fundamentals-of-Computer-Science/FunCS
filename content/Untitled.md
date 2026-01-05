@@ -1,3 +1,7 @@
+---
+draft: true
+---
+
 # Book Structure
 
 Each chapter focuses on a data type and explores it through five strands. Students encounter these same five concepts with every new type. 

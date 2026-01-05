@@ -1,3 +1,7 @@
+---
+draft: true
+---
+
 > [!example]- Exercises - Intermediate (2 problems) 
 > 
 > **1. Object Composition**

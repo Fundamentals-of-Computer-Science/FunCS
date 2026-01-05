@@ -1,3 +1,7 @@
+---
+draft: true
+---
+
 ````
 ## Data Structures Exam - Arrays & Linked Lists
 
