@@ -1,6 +1,7 @@
 ---
 title: Chapter 1 - Booleans
 draft: false
+permalink: ch1
 ---
 
 # Chapter 1: Booleans

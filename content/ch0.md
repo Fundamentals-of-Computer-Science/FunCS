@@ -1,6 +1,7 @@
 ---
 title: Chapter 0 - Before Beginning
 draft: false
+permalink: ch0
 ---
 
 # Chapter 0: Before You Begin
