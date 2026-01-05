@@ -24,7 +24,7 @@ Practice comes in two directions. Sometimes you'll see code and translate it to 
 
 If you're new, begin with Chapter 0. It introduces the core ideas (data, computation, types) and walks you through the practice method you'll use throughout.
 
-**[[Chapter 0 - Before You Begin]]**: What programming is, how this book teaches, and how to practice effectively.
+**[[Chapter 0 - Before Beginning]]**: What programming is, how this book teaches, and how to practice effectively.
 
 **[[Chapter 1 - Booleans]]**: True and false values. The simplest data type, and your first complete pass through the five questions.
 
