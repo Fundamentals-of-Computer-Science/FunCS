@@ -39,7 +39,7 @@ Uppercase takes some text, and producs an all uppercase version. The data being 
 ```
 > (greater than) takes two numbers and produces a boolean value.
 
-Every program you write will follow this pattern: define what data you're working with, then describe what transformations to apply.ßßß
+Every program you write will follow this pattern: define what data you're working with, then describe what transformations to apply.
 
 ---
 
