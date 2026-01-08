@@ -27,7 +27,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Search(),
     Component.Darkmode(),
     Component.DesktopOnly(Component.Explorer({
-      folderClickBehavior: "collapse",
+      folderClickBehavior: "link",
       folderDefaultState: "collapsed",
     })),
   ],
@@ -47,7 +47,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.Search(),
     Component.Darkmode(),
     Component.DesktopOnly(Component.Explorer({
-      folderClickBehavior: "collapse",
+      folderClickBehavior: "link",
       folderDefaultState: "collapsed",
     })),
   ],
