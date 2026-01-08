@@ -83,7 +83,7 @@ const config: QuartzConfig = {
       Plugin.AliasRedirects(),
       Plugin.ComponentResources(),
       Plugin.ContentPage(),
-      Plugin.FolderPage(),
+      // Plugin.FolderPage(), // Disabled - using custom index.md files instead
       Plugin.TagPage(),
       Plugin.ContentIndex({
         enableSiteMap: true,
